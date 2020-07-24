@@ -27,6 +27,5 @@ Ejecutar tests
 ```
 docker exec -it planeta_huerto_php bash
 ./bin/phpunit
-php bin/phpunit
 exit
 ```
