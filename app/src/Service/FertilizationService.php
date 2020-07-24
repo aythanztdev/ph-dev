@@ -15,14 +15,20 @@ class FertilizationService
         $datetimeSummer = new \DateTime(SeasonConstants::SUMMER);
         $datetimeFall = new \DateTime(SeasonConstants::FALL);
 
-        $diff = date_diff($bonsai->getLastFertilization(), $datetimeNow);
+        $fertilizedInTheLastThirtyDays = false;
+        if ($bonsai->getLastFertilization()) {
+            $diff = date_diff($bonsai->getLastFertilization(), $datetimeNow);
+            if ($diff->format("%d") <= 30) {
+                $fertilizedInTheLastThirtyDays = true;
+            }
+        }
 
         $fertilize = false;
         if ((
                 $datetimeNow >= $datetimeSummer && $datetimeSpring <= $datetimeFall ||
                 $datetimeNow >= $datetimeSpring && $datetimeSpring <= $datetimeSummer
             ) &&
-            $diff->format("%d") <= 30
+            !$fertilizedInTheLastThirtyDays
         ) {
             $fertilize = true;
         }

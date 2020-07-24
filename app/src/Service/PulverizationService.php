@@ -10,7 +10,7 @@ class PulverizationService
     public function pulverize(Bonsai $bonsai)
     {
         $pulverize = null;
-;        if ($bonsai->getBonsaiType() === BonsaiTypeConstants::TYPE_ELM) {
+        if ($bonsai->getBonsaiType()->getType() == BonsaiTypeConstants::TYPE_ELM) {
             $pulverize = $bonsai->getBonsaiType()->getIrrigation();
         }
 

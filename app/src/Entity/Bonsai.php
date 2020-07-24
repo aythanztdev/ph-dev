@@ -32,7 +32,7 @@ class Bonsai
     private $bonsaiType;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      * @Assert\NotBlank
      * @Groups({"bonsai:get"})
      */
@@ -46,7 +46,7 @@ class Bonsai
     private $transplanted = false;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      * @Assert\NotBlank
      * @Groups({"bonsai:get"})
      */

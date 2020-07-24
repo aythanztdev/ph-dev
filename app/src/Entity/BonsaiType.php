@@ -77,7 +77,7 @@ class BonsaiType
         return $this->bonsais;
     }
 
-    public function addBonsai(Bonsai $bonsai): self
+    public function addBonsai(Bonsai $bonsai)
     {
         if (!$this->bonsais->contains($bonsai)) {
             $this->bonsais[] = $bonsai;
@@ -87,7 +87,7 @@ class BonsaiType
         return $this;
     }
 
-    public function removeBonsai(Bonsai $bonsai): self
+    public function removeBonsai(Bonsai $bonsai)
     {
         if ($this->bonsais->contains($bonsai)) {
             $this->bonsais->removeElement($bonsai);
@@ -104,7 +104,7 @@ class BonsaiType
         return $this->type;
     }
 
-    public function setType($type): self
+    public function setType($type)
     {
         $this->type = $type;
 
@@ -116,7 +116,7 @@ class BonsaiType
         return $this->irrigation;
     }
 
-    public function setIrrigation($irrigation): self
+    public function setIrrigation($irrigation)
     {
         $this->irrigation = $irrigation;
 
@@ -128,7 +128,7 @@ class BonsaiType
         return $this->createdAt;
     }
 
-    public function setCreatedAt($createdAt): self
+    public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
 
@@ -140,7 +140,7 @@ class BonsaiType
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt($updatedAt): self
+    public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
 
@@ -152,7 +152,7 @@ class BonsaiType
         return $this->deletedAt;
     }
 
-    public function setDeletedAt($deletedAt): self
+    public function setDeletedAt($deletedAt)
     {
         $this->deletedAt = $deletedAt;
 
