@@ -16,18 +16,6 @@ Levantar los contenedores
 docker-compose up -d
 ```
 
-Agregar entrada al /etc/hosts
-```
-127.0.0.1 planeta-huerto.local
-```
-
-
-Configurar base de datos
-```
-docker exec -it planeta_huerto_db mysql -e "CREATE DATABASE planeta_huerto"
-docker exec -it planeta_huerto_db mysql -e "GRANT ALL ON planeta_huerto.* TO 'planeta_huerto'@'%' IDENTIFIED BY 'planeta_huerto'"
-```
-
 Instalar vendor y configuración
 ```
 docker exec -it planeta_huerto_php bash
@@ -36,4 +24,11 @@ composer install
 exit
 ```
 
-Probar: http://planeta-huerto.local
+Ejecutar tests
+```
+docker exec -it planeta_huerto_php bash
+cd /app
+./bin/phpunit
+php bin/phpunit
+exit
+```
