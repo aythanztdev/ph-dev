@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+    web:
+        container_name: planeta_huerto_web
+        image: planeta_huerto_web
+        build: ./web
+        ports:
+            - ${APP_PORT}:80
+        volumes:
+            - ${APP_DIR}:/home:ro
+        links:
+            - php
+        network_mode: bridge
+
+    php:
+        container_name: planeta_huerto_php
+        image: planeta_huerto_php
+        build: ./php
+        links:
+            - db
+        volumes:
+            - ${APP_DIR}:/home:cached
+        network_mode: bridge
+
+    db:
+        container_name: planeta_huerto_db
+        image: mariadb:10.1
+        ports:
+            - 3306:3306
+        volumes:
+            - ${APP_DB}:/var/lib/mysql
+            - ${PWD}/db/etc/mysql/conf.d/custom.cnf:/etc/mysql/conf.d/custom.cnf
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        network_mode: bridge

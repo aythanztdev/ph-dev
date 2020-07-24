@@ -1,0 +1,12 @@
+###> PHPStorm
+.idea/
+###< PHPStorm
+
+###> MACOSX
+.DS_Store
+###< MACOSX
+
+###> Local DB
+_db/*
+!_db/.gitkeep
+###< Local DB
