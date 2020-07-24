@@ -2,7 +2,7 @@
 
 ## Docker
 
-Copiar `dist.env` a `.env` y modificar los valores necesarios.
+Copiar `dist.env` a `.env` y modificar los valores necesarios (localización del directorio mediante la variable APP_DIR)
 ```
 cp dist.env .env
 ```
