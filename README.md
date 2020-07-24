@@ -19,7 +19,6 @@ docker-compose up -d
 Instalar vendor y configuración
 ```
 docker exec -it planeta_huerto_php bash
-cd /app
 composer install
 exit
 ```
@@ -27,7 +26,6 @@ exit
 Ejecutar tests
 ```
 docker exec -it planeta_huerto_php bash
-cd /app
 ./bin/phpunit
 php bin/phpunit
 exit
